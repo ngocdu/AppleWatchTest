@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchTest_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <slider width="1" alignment="left" value="1" maximum="5" steps="5" id="VBb-oO-D2m"/>
+                        <picker width="1" height="100" alignment="left" id="JOj-8f-kd8">
+                            <variation key="device=watch42mm" height="78"/>
+                        </picker>
+                        <button width="1" alignment="left" title="Button" id="4zU-fR-gLa">
+                            <connections>
+                                <action selector="showAlertPressed" destination="AgC-eL-Hgc" id="iy5-fN-j9R"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <variation key="default">
+                        <mask key="items">
+                            <exclude reference="VBb-oO-D2m"/>
+                            <exclude reference="JOj-8f-kd8"/>
+                            <exclude reference="4zU-fR-gLa"/>
+                        </mask>
+                    </variation>
+                    <variation key="device=watch42mm">
+                        <mask key="items">
+                            <include reference="VBb-oO-D2m"/>
+                            <include reference="JOj-8f-kd8"/>
+                            <include reference="4zU-fR-gLa"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="picker" destination="JOj-8f-kd8" id="FRC-fH-jdr"/>
+                        <outlet property="slider" destination="VBb-oO-D2m" id="jL6-l1-VUg"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="153.43589743589746" y="240.17948717948718"/>
         </scene>
     </scenes>
 </document>
